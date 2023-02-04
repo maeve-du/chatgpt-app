@@ -132,15 +132,13 @@ body {
   display: none;
 }
 
-
-
-
 form {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   position: sticky;
   bottom: 0;
+  border-top: 0.5px solid hsl(0, 0%, 100%, 20%);
 }
 
 .input {
@@ -161,6 +159,7 @@ textarea {
   border-radius: 5px;
   border: none;
   outline: none;
+
 }
 
 button {
