@@ -5,7 +5,8 @@ import { Configuration, OpenAIApi } from 'openai';
 
 // config openai with api key
 dotenv.config({
-  // path: '../.env'
+  // path: '../.env' // use in local environment
+  path: '/etc/secrets/.env' // use in online environment
 });
 
 
