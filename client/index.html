@@ -10,11 +10,22 @@
 
 <body>
   <div id="app">
+    <div class="title">
+      <h1>Codux</h1>
+      <p>AI-Powered Chatbot 🤖</p>
+    </div>
     <div id="chat_container"></div>
 
     <form>
-      <textarea name="prompt" id="" cols="1" rows="1" placeholder="Ask Codux..."></textarea>
-      <button type="submit"><img src="assets/send.svg"></button>
+      <div class="input">
+        <textarea name="prompt" id="" cols="1" rows="1" placeholder="Ask Codux..."></textarea>
+        <button type="submit"><img src="assets/send.svg"></button>
+      </div>
+
+      <div id="footer">
+        Copyright © 2023 DevDu Studio. All rights reserved.
+      </div>
+
     </form>
   </div>
   <script type="module" src="./src/js/script.js"></script>
