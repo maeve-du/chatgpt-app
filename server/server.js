@@ -5,7 +5,7 @@ import { Configuration, OpenAIApi } from 'openai';
 
 // config openai with api key
 dotenv.config({
-  path: '../.env'
+  // path: '../.env'
 });
 
 

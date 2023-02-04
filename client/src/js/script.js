@@ -112,7 +112,8 @@ const handleSumbit = async (e) => {
   loader(messageDiv);
 
   // fetch data from server : bot's response
-  const response = await fetch('http://localhost:3000', {
+  // const response = await fetch('http://localhost:3000', {
+  const response = await fetch('https://chatgpt-app-koeo.onrender.com', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
