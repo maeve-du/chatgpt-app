@@ -33,7 +33,7 @@ function typeText(element, text) {
     // this is going to get the character under a specific index in the text that in the text that AI  is going to return
     // and of cause we are going to increament that index 
     if (index < text.length) {
-      element.innerHtml += text.charAt(index);
+      element.innerHTML += text.charAt(index);
       // let text = "hello";
       //console.log(text.charAt(0)); // outputs "h"
       index++;
@@ -95,7 +95,7 @@ const handleSumbit = async (e) => {
   e.preventDefault();
 
   const data = new FormData(form);
-  console.log('¥¥¥', data.get('prompt'));
+
   // user's chatstripe
   chatContainer.innerHTML += chatStripe(false, data.get('prompt'));
 
@@ -110,6 +110,33 @@ const handleSumbit = async (e) => {
   const messageDiv = document.getElementById(uniqueId);
 
   loader(messageDiv);
+
+  // fetch data from server : bot's response
+  const response = await fetch('http://localhost:3000', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      prompt: data.get('prompt')
+    })
+  });
+
+  clearInterval(loadInterval);
+  messageDiv.innerHTML = '';
+
+  if (response.ok) {
+    const data = await response.json();
+    const parsedData = data.bot.trim();
+
+    typeText(messageDiv, parsedData);
+  } else {
+    const err = await response.text();
+
+    messageDiv.innerHTML = "Something went wrong";
+
+    alert(err);
+  }
 
 };
 
