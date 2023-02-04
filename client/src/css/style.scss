@@ -10,7 +10,7 @@
 
 body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   max-height: 100vh;
   background: #343541;
 }
@@ -113,7 +113,7 @@ body {
   font-size: 16px;
 
   max-width: 100%;
-  overflow-x: scroll;
+  overflow-x: visible;
 
   /*
    * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
@@ -181,4 +181,5 @@ form img {
   align-items: center;
   justify-content: center;
   color: hsl(0, 0%, 100%, 38%);
+  background: #343541;
 }
